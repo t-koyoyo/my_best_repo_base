@@ -1,0 +1,4 @@
+# PyPI packages
+boto3==1.34.133
+
+# Local packages
