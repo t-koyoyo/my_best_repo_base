@@ -1,6 +1,7 @@
 import boto3
 from utils.constants import Constants
 
+
 class AwsService:
 
   ## ------------------------------------------------------------
@@ -9,13 +10,6 @@ class AwsService:
   def cognito_client():
     """ Cognito > クライアントを取得する """
     return boto3.client('cognito-idp', endpoint_url="http://localstack:4566" if Constants.ENV == "local" else None)
-
-  ## ------------------------------------------------------------
-  ## ◼️ DynamoDB
-  ## ------------------------------------------------------------
-  def dynamodb_client():
-    """ DynamoDB > クライアントを取得する """
-    return boto3.client('dynamodb', endpoint_url="http://localstack:4566" if Constants.ENV == "local" else None)
 
   ## ------------------------------------------------------------
   ## ◼️ S3

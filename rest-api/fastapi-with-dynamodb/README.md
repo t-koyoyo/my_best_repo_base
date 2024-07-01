@@ -1,3 +1,10 @@
+# FastAPI with DynamoDB
+
+## Usage
+
+`docker-compose.yml` を以下に設定する。
+
+```yml
 services:
   api:
     container_name: example-api
@@ -11,15 +18,6 @@ services:
       - .env.local
     volumes:
       - ./rest-api/fastapi-with-dynamodb:/app
-  localstack: # Helthcheck ⇒ http://localhost:4566/_localstack/health
-    image: localstack/localstack:3.5
-    ports:
-      - "4566:4566"
-    environment:
-      - DEBUG=1
-    volumes:
-      - ./data/init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh
-      - localstack:/var/lib/localstack
+```
 
-volumes:
-  localstack:
+実装デザインパターンはリポジトリーパターン
