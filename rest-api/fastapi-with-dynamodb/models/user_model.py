@@ -4,8 +4,9 @@
  * DynamoDBへのPythonインターフェースライブラリであるPynamoDBを使用します。
  *   -> https://pynamodb.readthedocs.io/en/stable/
 """
+from datetime import datetime
 from pynamodb.models import Model
-from pynamodb.attributes import UnicodeAttribute
+from pynamodb.attributes import UnicodeAttribute, UTCDateTimeAttribute
 from utils.constants import Constants
 
 
@@ -19,4 +20,12 @@ class UserModel(Model):
         host       = 'http://localstack:4566' if Constants.ENV == "local" else 'https://dynamodb.ap-northeast-1.amazonaws.com'
 
     # ユーザーID
-    user_id = UnicodeAttribute(hash_key=True, null=False)
+    user_id    = UnicodeAttribute(hash_key=True, null=False)
+    # ユーザー名
+    user_name  = UnicodeAttribute(null=False)
+    # 性別
+    gender     = UnicodeAttribute(null=False)
+    # 作成日時
+    created_at = UTCDateTimeAttribute(null=False, default=datetime.now())
+    # 更新日時
+    updated_at = UTCDateTimeAttribute(null=False, default=datetime.now())
