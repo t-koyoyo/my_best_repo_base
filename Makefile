@@ -7,10 +7,10 @@ down:
 	docker-compose down
 
 bash-api:
-	docker exec -i -t XXXXX-api /bin/bash
+	docker exec -i -t example-api /bin/bash
 
 log-api:
-	docker logs -f XXXXX-api
+	docker logs -f example-api
 
 clear:
 	docker system prune --force
