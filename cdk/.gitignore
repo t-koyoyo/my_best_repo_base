@@ -1,0 +1,20 @@
+# NodeJS
+node_modules/
+npm-debug.log
+
+# CDK asset staging directory
+cdk.out/
+
+# AWS SAM Local
+.sam/
+
+# IDEs and editors
+*.iml
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
